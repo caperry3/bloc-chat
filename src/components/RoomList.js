@@ -23,21 +23,14 @@ class RoomList extends Component {
   render() {
     return (
       <section className="roomlist">
+      <h2>Bloc Chat</h2>
         <div>
           {
-            this.state.rooms.map()
+            this.state.rooms.map( (room, index) =>
+            <p className="roomname" key={index}> {room.name} </p>
+            )
           }
         </div>
-          <h2>Bloc Chat</h2>
-          <div className="room1">
-            <p>Room 1</p>
-          </div>
-          <div className="room2">
-            <p>Room 2</p>
-          </div>
-          <div className="room3">
-            <p>Room 3</p>
-          </div>
       </section>
     );
   }

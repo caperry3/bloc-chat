@@ -4,7 +4,6 @@ import './App.css';
 import RoomList from './components/RoomList';
 
 
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAzSROD0S-EpL96s9NLP_J7VxcFz3xeItM",
     authDomain: "bloc-chatspace.firebaseapp.com",
@@ -20,7 +19,9 @@ class App extends Component {
     return (
       <section className="App">
         <sidebar>
-          <RoomList/>
+          <RoomList
+          firebase={firebase}
+          />
         </sidebar>
       </section>
     );
