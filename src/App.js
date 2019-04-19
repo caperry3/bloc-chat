@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import * as firebase from 'firebase';
 import './App.css';
+import RoomList from './components/RoomList';
+
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAzSROD0S-EpL96s9NLP_J7VxcFz3xeItM",
+    authDomain: "bloc-chatspace.firebaseapp.com",
+    databaseURL: "https://bloc-chatspace.firebaseio.com",
+    projectId: "bloc-chatspace",
+    storageBucket: "bloc-chatspace.appspot.com",
+    messagingSenderId: "263589212288"
+  };
+  firebase.initializeApp(config);
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <section className="App">
+        <sidebar>
+          <RoomList/>
+        </sidebar>
+      </section>
     );
   }
 }
