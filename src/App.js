@@ -18,11 +18,11 @@ class App extends Component {
   render() {
     return (
       <section className="App">
-        <sidebar>
+        <div className="sidebar">
           <RoomList
           firebase={firebase}
           />
-        </sidebar>
+        </div>
       </section>
     );
   }
