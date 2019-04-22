@@ -10,6 +10,7 @@ class RoomList extends Component {
   };
 
   this.roomsRef = this.props.firebase.database().ref('rooms');
+
 }
 
   componentDidMount() {
@@ -21,7 +22,9 @@ class RoomList extends Component {
   }
 
   createRoom() {
-
+    this.roomsRef.push({
+      name: input
+    });
   }
 
   render() {
@@ -38,7 +41,7 @@ class RoomList extends Component {
         <form>
           <label>New Room:</label>
           <input type="text" id="new-room"/>
-          <button id="new-form-submit">Submit</button>
+          <button id="new-form-submit" onClick={() => this.createRoom()}>Submit</button>
         </form>
       </section>
     );
