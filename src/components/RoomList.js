@@ -20,6 +20,10 @@ class RoomList extends Component {
     });
   }
 
+  createRoom() {
+
+  }
+
   render() {
     return (
       <section className="roomlist">
@@ -31,6 +35,11 @@ class RoomList extends Component {
             )
           }
         </div>
+        <form>
+          <label>New Room:</label>
+          <input type="text" id="new-room"/>
+          <button id="new-form-submit">Submit</button>
+        </form>
       </section>
     );
   }
