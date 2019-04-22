@@ -39,7 +39,7 @@ class RoomList extends Component {
         <div>
           {
             this.state.rooms.map( (room, index) =>
-            <p className="roomname" key={index}> {room.name} </p>
+            <p className="roomname" key={index} onClick={console.log('hi')}> {room.name} </p>
             )
           }
         </div>
