@@ -22,14 +22,10 @@ class App extends Component {
     this.state = {
       currentActiveRoom: ''
     };
-    setRoom = (room) => {
-        this.setState({ currentActiveRoom: room });
-      };
   }
-
-  //setRoom(room) {
-    //this.setState({ currentActiveRoom: room });
-//  }
+  setRoom = (room) => {
+      this.setState({ currentActiveRoom: room });
+    };
 
 
   render() {
