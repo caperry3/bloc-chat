@@ -35,12 +35,13 @@ class App extends Component {
           <RoomList
           setRoom={this.setRoom}
           firebase={firebase}
+          currentActiveRoom={this.state.currentActiveRoom}
           />
         </div>
         <div className="messages">
           <MessageList
           firebase={firebase}
-          setRoom={this.setRoom.bind(this)}
+          currentActiveRoom={this.state.currentActiveRoom}
           />
         </div>
       </section>
