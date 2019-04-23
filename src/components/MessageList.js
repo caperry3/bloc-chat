@@ -24,8 +24,8 @@ class MessageList extends Component {
   render() {
     return (
       <div className="message-list">
-        <h2>Room 1</h2>
-          <p>hello</p>
+        <h2>{ this.props.currentActiveRoom }</h2>
+          <p></p>
       </div>
     )
   }
