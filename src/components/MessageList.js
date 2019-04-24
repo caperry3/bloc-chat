@@ -23,15 +23,9 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div className="message-list">
-        <h2>{ this.props.currentActiveRoom.name }</h2>
-          <div>
-          {
-            this.props.currentActiveRoom.map( (room) =>
-            <p className="messages" > { room.content }</p>
-            )
-          }
-          </div>
+      <div>
+        <h1>{this.props.currentActiveRoom.name}</h1>
+        <p></p>
       </div>
     )
   }
