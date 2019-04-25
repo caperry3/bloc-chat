@@ -20,7 +20,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentActiveRoom: ''
+      currentActiveRoom: {
+        username: "",
+        content: "",
+        sentAt: "",
+        roomId: ""
+      }
     };
   }
   setRoom = (room) => {
@@ -33,13 +38,14 @@ class App extends Component {
       <section className="App">
         <div className="sidebar">
           <RoomList
-          setRoom={this.setRoom}
+          setRoom={this.setRoom.bind(this)}
           firebase={firebase}
           currentActiveRoom={this.state.currentActiveRoom}
           />
         </div>
         <div className="messages">
           <MessageList
+          setRoom={this.setRoom.bind(this)}
           firebase={firebase}
           currentActiveRoom={this.state.currentActiveRoom}
           />
