@@ -27,11 +27,10 @@ class MessageList extends Component {
       <div>
         <h1>{this.props.currentActiveRoom.name}</h1>
         <p>
-        {  
+        {
           this.state.messages.filter( message => message.roomId === this.state.currentActiveRoom.key).map( (messages, index) =>
           <p className="message" key={index}> {messages.content} </p>
-          )
-
+        )
         }
         </p>
       </div>
