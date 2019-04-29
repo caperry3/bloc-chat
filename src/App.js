@@ -23,7 +23,7 @@ class App extends Component {
 
     this.state = {
       user: {
-        name: ""
+        displayName: "jim"
       },
       currentActiveRoom: {
         username: "",
@@ -40,7 +40,6 @@ class App extends Component {
   setUser(user) {
     this.setState({ user: user });
   };
-
 
   render() {
     return (
@@ -60,6 +59,7 @@ class App extends Component {
           />
         </div>
         <div className="sign-in">
+        {  console.log(this.state.user) }
           <User
           firebase={firebase}
           setUser={this.setUser.bind(this)}
