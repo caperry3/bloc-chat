@@ -30,7 +30,7 @@ class User extends Component {
           <button id="sign-in" onClick={ () => this.signIn()}>Sign In</button>
           <button id="sign-out" onClick={ () => this.signOut()}>Sign Out</button>
         </div>
-          <p id="display-username">{this.props.user.displayName}</p>
+          <p id="display-username">Hello, { this.props.user ? this.props.user.displayName : "Guest" }!</p>
       </section>
     );
   }

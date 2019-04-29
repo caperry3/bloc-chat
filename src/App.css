@@ -1,13 +1,13 @@
 .App {
-  display: flex;
+
 }
 
 .sidebar {
   padding: 30px;
   background-color: #C3C2C2;
+  float: left;
   height: fill;
   width: 20%;
-  order: 1;
 }
 
 p {
@@ -15,11 +15,14 @@ p {
 }
 
 .messages {
+  float: left;
   padding: 30px;
+  width: 20px;
 }
 
-.sign-in {
-  display: flex;
-  float: right;
-  order: 2;
+header {
+  background-color: #3399ff;
+  padding: 10px;
+  text-align: right;
+  font-size: 20px;
 }
