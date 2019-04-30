@@ -61,6 +61,7 @@ class App extends Component {
           setRoom={this.setRoom.bind(this)}
           firebase={firebase}
           currentActiveRoom={this.state.currentActiveRoom}
+          user={this.state.user}
           />
         </div>
       </section>
