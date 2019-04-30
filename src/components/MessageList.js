@@ -30,7 +30,8 @@ class MessageList extends Component {
   createNewMessage(input) {
     this.messagesRef.push({
       content: input,
-      username: this.props.user.displayName
+      username: this.props.user.displayName,
+      roomId: this.props.currentActiveRoom.key
     });
   }
 
