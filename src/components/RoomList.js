@@ -27,11 +27,22 @@ class RoomList extends Component {
     this.setState({ newRoomName: e.target.value });
   }
 
-
   createRoom(input) {
     this.roomsRef.push({
       name: input
     });
+    this.setState({ newRoomName: '' });
+
+  }
+
+  deleteRoom(room) {
+    const rooms = this.state.roomsRef.filter((x, i) => {
+      if (rooms === i)
+        return false
+      else
+        return true
+    });
+    this.setState({ rooms: rooms });
   }
 
   render() {
@@ -45,11 +56,9 @@ class RoomList extends Component {
             )
           }
         </div>
-        <form onSubmit={() => this.createRoom(this.state.newRoomName)}>
           <label>New Room:</label>
           <input type="text" id="new-room" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) }/>
-          <button type="submit" id="new-form-submit" >Submit</button>
-        </form>
+          <button type="submit" id="new-form-submit" onClick={() => this.createRoom(this.state.newRoomName)}>Submit</button>
       </section>
     );
   }
