@@ -23,8 +23,10 @@ class RoomList extends Component {
   }
 
   handleChange(e) {
-    this.setState({ newRoomName: e.target.value })
+    e.preventDefault();
+    this.setState({ newRoomName: e.target.value });
   }
+
 
   createRoom(input) {
     this.roomsRef.push({
@@ -43,10 +45,10 @@ class RoomList extends Component {
             )
           }
         </div>
-        <form>
+        <form onSubmit={() => this.createRoom(this.state.newRoomName)}>
           <label>New Room:</label>
           <input type="text" id="new-room" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) }/>
-          <button id="new-form-submit" onClick={() => this.createRoom(this.state.newRoomName)}>Submit</button>
+          <button type="submit" id="new-form-submit" >Submit</button>
         </form>
       </section>
     );
