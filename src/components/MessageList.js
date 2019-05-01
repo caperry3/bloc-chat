@@ -33,6 +33,7 @@ class MessageList extends Component {
       username: this.props.user.displayName,
       roomId: this.props.currentActiveRoom.key
     });
+    this.setState({ newMessage: '' });
   }
 
   render() {
