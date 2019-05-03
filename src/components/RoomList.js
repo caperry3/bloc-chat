@@ -35,9 +35,9 @@ class RoomList extends Component {
 
   }
 
-  deleteRoom(room) {
-    const rooms = this.state.roomsRef.filter((x, i) => {
-      if (rooms === i)
+  deleteRoom(index) {
+    const rooms = this.state.rooms.filter((x, i) => {
+      if (index === i)
         return false
       else
         return true
@@ -49,13 +49,16 @@ class RoomList extends Component {
     return (
       <section className="roomlist">
       <h2>Bloc Chat</h2>
-        <div>
+        <ul>
           {
             this.state.rooms.map( (room, index) =>
-            <p className="roomname" key={index} onClick={() => this.props.setRoom(room) }> {room.name} </p>
+            <li
+            className="roomname" key={index} onClick={() => this.props.setRoom(room) }> {room.name}
+              <button type="button" className="room-delete-button" onClick= {this.deleteRoom}> X </button>
+            </li>
             )
           }
-        </div>
+        </ul>
           <label>New Room:</label>
           <input type="text" id="new-room" value={this.state.newRoomName} onChange={ (e) => this.handleChange(e) }/>
           <button type="submit" id="new-form-submit" onClick={() => this.createRoom(this.state.newRoomName)}>Submit</button>
